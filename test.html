@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+    <div class="container">
+        <div onclick="changecolour(event.target)" class="box"></div>
+        <div onclick="changecolour(event.target)" class="box overlay"></div>
+        <div onclick="changecolour(event.target)" class="box overlay2"></div>
+        <div onclick="changecolour(event.target)" class="box overlay3"></div>
+        <div onclick="changecolour(event.target)" class="box overlay4"></div>
+        <div onclick="changecolour(event.target)" class="box overlay5"></div>
+        <div onclick="changecolour(event.target)" class="box overlay6a"></div>
+    </div>
+
+
+</body>
+
+<script>
+    function changecolour(evt) {
+        let Clickingbox = event.target;
+      
+        
+        let Color = getComputedStyle(evt).backgroundColor
+
+        let lastbox = Clickingbox.previousElementSibling;
+        let frontbox = Clickingbox.nextElementSibling;
+
+        if(lastbox) {
+            lastbox.style.backgroundColor = Color;
+        }
+        if(frontbox) {
+        frontbox.style.backgroundColor = Color;
+        }
+        
+    }
+</script>
+</html>
